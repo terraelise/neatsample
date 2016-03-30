@@ -34,6 +34,18 @@ header {
 	height: 60px;
 	background-color: rgba(0, 0, 0, 0.8);
 }
+section {
+	@include row();
+	//not sure why, but it's not doing the before or the clear on after )-: maybe old stuff on my end? and why one semi-colon?
+  	&:before {
+	    clear: both;
+	    content: "";
+	    display: table;
+    }
+    &:after {
+	    clear: both;
+    }
+}
 .site-width {
 	width: 100%;
 	max-width: $website-width;
@@ -78,6 +90,9 @@ header {
 .padding-bottom {
 	margin-bottom: $large-spacing;
 }
+.overflow-hidden {
+	overflow: hidden;
+}
 .text-nowrap {
 	white-space: nowrap;
 }
@@ -87,8 +102,11 @@ header {
 .text-active {
 	color: $color-active;
 }
-.img-responsive {
+img {
 	display: inline-block;
+	vertical-align: top;
+}
+.img-responsive {
 	max-width: 100%;
 	margin-bottom: 15px;
 }
@@ -116,6 +134,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 h1 {
 	font-size: 277%;
+	margin-top: 60px;
 }
 h2 {
 	display: inline-block;
