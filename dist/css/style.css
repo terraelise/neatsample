@@ -4,6 +4,11 @@ html {
 *, *::after, *::before {
   box-sizing: inherit; }
 
+@font-face {
+  font-family: 'TradeGothic-BoldCondTwenty';
+  src: url("../fonts/tradegothic-boldcondtwenty-webfont.eot");
+  src: url("../fonts/tradegothic-boldcondtwenty-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/tradegothic-boldcondtwenty-webfont.woff") format("woff"), url("../fonts/tradegothic-boldcondtwenty-webfont.ttf") format("truetype"); }
+
 body {
   padding: 0;
   margin: 0;
@@ -14,11 +19,21 @@ body {
 
 header {
   position: fixed;
+  z-index: 100;
   top: 0;
   left: 0;
   right: 0;
   height: 60px;
   background-color: rgba(0, 0, 0, 0.8); }
+  header .header-logo {
+    display: block;
+    width: 87px;
+    height: 25px;
+    margin-top: 20px;
+    background-image: url("../img/header-envoy.png");
+    background-repeat: no-repeat;
+    background-position: 0 0;
+    background-size: contain; }
 
 section {
   display: block; }
@@ -34,6 +49,7 @@ section {
     clear: both; }
 
 .site-width {
+  position: relative;
   width: 100%;
   max-width: 960px;
   min-width: 320px;
@@ -141,3 +157,162 @@ hr {
   hr.tall {
     height: 5px;
     margin: 35px 0; }
+
+.chevron::before {
+  border-color: #EEEEEE;
+  border-style: solid;
+  border-width: 0.09em 0.09em 0 0;
+  content: '';
+  display: inline-block;
+  height: 0.45em;
+  left: 0.15em;
+  position: relative;
+  top: 0.15em;
+  transform: rotate(-45deg);
+  vertical-align: top;
+  width: 0.45em; }
+
+.chevron-right:before {
+  left: 0;
+  transform: rotate(45deg); }
+
+.chevron-bottom:before {
+  top: 0;
+  transform: rotate(135deg); }
+
+.chevron-left:before {
+  left: 0.25em;
+  transform: rotate(-135deg); }
+
+.owl-carousel {
+  min-width: 320px; }
+  .owl-carousel .owl-controls {
+    position: absolute;
+    bottom: 15px;
+    left: 0;
+    right: 0;
+    max-width: 960px;
+    margin: auto; }
+    @media screen and (max-width: 599px) {
+      .owl-carousel .owl-controls {
+        bottom: 0;
+        padding: 15px 0;
+        background-color: #666666; } }
+    .owl-carousel .owl-controls .owl-dots .owl-dot span {
+      width: 11px;
+      height: 11px;
+      margin: 10px 5px;
+      background: #EEEEEE; }
+    .owl-carousel .owl-controls .owl-dots .owl-dot:hover span, .owl-carousel .owl-controls .owl-dots .owl-dot:focus span {
+      background-color: #9f9f9f; }
+    .owl-carousel .owl-controls .owl-dots .owl-dot.active span {
+      background-color: #e34e33; }
+    .owl-carousel .owl-controls .owl-nav {
+      position: absolute;
+      top: -5px;
+      right: 0; }
+      @media screen and (max-width: 599px) {
+        .owl-carousel .owl-controls .owl-nav {
+          position: relative;
+          top: 0;
+          right: auto;
+          margin-left: -5px; } }
+      .owl-carousel .owl-controls .owl-nav [class*=owl-] {
+        overflow: hidden;
+        height: 50px;
+        margin: 0;
+        padding: 0 15px 0 10px;
+        background: transparent;
+        font-size: 50px;
+        border-top-left-radius: 0;
+        border-top-right-radius: 0;
+        border-bottom-right-radius: 0;
+        border-top-right-radius: 0;
+        border-bottom-left-radius: 0;
+        border-bottom-right-radius: 0;
+        border-bottom-left-radius: 0;
+        border-top-left-radius: 0; }
+        .owl-carousel .owl-controls .owl-nav [class*=owl-]:hover {
+          background: transparent; }
+          .owl-carousel .owl-controls .owl-nav [class*=owl-]:hover .chevron::before {
+            border-color: #e34e33; }
+  .owl-carousel .owl-item {
+    overflow: hidden;
+    height: 674px; }
+    .owl-carousel .owl-item .intro-copy {
+      overflow: hidden; }
+      @media screen and (min-width: 600px) {
+        .owl-carousel .owl-item .intro-copy {
+          position: absolute;
+          top: 0;
+          left: 10px;
+          z-index: 2;
+          width: 45%; } }
+      .owl-carousel .owl-item .intro-copy .intro-title {
+        font-family: 'TradeGothic-BoldCondTwenty',Impact,Haettenschweiler,"Franklin Gothic Bold",Charcoal,"Helvetica Inserat","Bitstream Vera Sans Bold","Arial Black","sans serif";
+        font-size: 354%;
+        line-height: 0.94;
+        letter-spacing: -0.025em;
+        color: #d90e0a;
+        text-transform: uppercase;
+        margin-top: 90px; }
+        @media screen and (min-width: 600px) {
+          .owl-carousel .owl-item .intro-copy .intro-title {
+            font-size: 477%;
+            margin-top: 140px; } }
+      .owl-carousel .owl-item .intro-copy p {
+        max-width: 400px;
+        margin: 20px 0;
+        font-size: 123%;
+        line-height: 1.25;
+        color: #9f9f9f; }
+      .owl-carousel .owl-item .intro-copy a {
+        color: #d90e0a; }
+    .owl-carousel .owl-item img {
+      position: absolute;
+      z-index: 1;
+      left: -9999px;
+      right: -9999px;
+      width: auto;
+      margin: auto;
+      height: 337px; }
+      @media screen and (min-width: 600px) {
+        .owl-carousel .owl-item img {
+          height: 674px; } }
+    .owl-carousel .owl-item .intro-2 {
+      background-color: #e3e3e3; }
+    .owl-carousel .owl-item .intro-3 {
+      background-color: #412b37; }
+      .owl-carousel .owl-item .intro-3 .intro-copy .intro-title {
+        color: #f68f1e; }
+      .owl-carousel .owl-item .intro-3 .intro-copy p {
+        color: #FFFFFF; }
+      .owl-carousel .owl-item .intro-3 .intro-copy a {
+        color: #f68f1e; }
+    .owl-carousel .owl-item .intro-4 {
+      background-color: #e0e0e0; }
+      .owl-carousel .owl-item .intro-4 .intro-copy .intro-title {
+        color: #2162bc; }
+      .owl-carousel .owl-item .intro-4 .intro-copy a {
+        color: #2162bc; }
+    @media screen and (min-width: 600px) and (max-width: 700px) {
+      .owl-carousel .owl-item .intro-2 .intro-copy .intro-title {
+        font-size: 369%; } }
+    @media screen and (min-width: 600px) and (max-width: 950px) {
+      .owl-carousel .owl-item .intro-3 .intro-copy {
+        width: 35%; }
+        .owl-carousel .owl-item .intro-3 .intro-copy .intro-title {
+          margin-top: 90px;
+          font-size: 369%; } }
+    @media screen and (min-width: 600px) {
+      .owl-carousel .owl-item .intro-1 .intro-copy {
+        max-width: 370px; }
+        .owl-carousel .owl-item .intro-1 .intro-copy .intro-title {
+          margin-top: 200px; }
+      .owl-carousel .owl-item .intro-2 .intro-copy {
+        left: 50%; }
+        .owl-carousel .owl-item .intro-2 .intro-copy .intro-title {
+          margin-top: 110px; } }
+    @media screen and (min-width: 800px) {
+      .owl-carousel .owl-item .intro-2 .intro-copy .intro-title {
+        margin-top: 140px; } }

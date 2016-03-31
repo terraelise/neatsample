@@ -1,13 +1,16 @@
 <!doctype html>
 <html lang="en">
     <head>
-        <meta charset="utf-8">
-        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <meta charset="utf-8" />
+        <meta http-equiv="x-ua-compatible" content="ie=edge" />
         <title>Terra Whitmeyer</title>
-        <meta name="description" content="Neat Sample">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="Neat Sample" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-        <link rel="stylesheet" href="css/style.min.css">
+        <!-- need to bundle -->
+        <link rel="stylesheet" href="js/owlcarousel/owl.carousel.min.css" />
+        <link rel="stylesheet" href="js/owlcarousel/owl.theme.default.min.css" />
+        <link rel="stylesheet" href="css/style.min.css" />
     </head>
     <body>
         <!--[if lt IE 9]>
@@ -17,13 +20,93 @@
         <header>
             <div class="site-width">
                 <nav>
+                    <a href="#" class="header-logo" title="ENVOY"></a>
+
+
+        <!-- notes to self
+        not sprite or retina anything, everything is usually saved 1x for this demo to save time, and main carousel images stay desktop layout
+
+        also, just going with modern browsers, no old fallback (ie. no filter for opacity etc.)
+
+header is black 80% 60px high, text sits 15px from bottom
+logo: 87x25
+links are arial, 13px, bold, -25, white off, 9f9f9f hover, e34e33 active
+Work       Services       Ventures       About       Contact       Blog
+
+twitter:
+
+bar: 161px x 40px 464646
+bird: 20px left? 21x17 Tweet. Tweet. Arial 13px bold 67d9da
+
+button: bg e34e33 (hover 941b1e) 40x40 with 14x14 +
+open: bg 941b1e 14x4 - 
+
+expand, bar gets 430px wide
+content bg e34e33, padding 30px 20px, but scroller 15px from right, 10px wide, drag 941b1e, area d3442f
+text arial 36/33 white, links 941b1e, date arial 16/33 e4e4e4, 25px between
+
+static content for now, rather that api to pull live + library to catch urls/@/# to link
+
+Can’t wait for the launch of the Envoy Website. <a href="#">instagr.am/p/N8d7E/</a> Check our latest work.
+about an hour ago via twitter
+
+ooVoo tabs Envoy as new digital agency.
+about an hour ago via twitter
+
+Check out our latest work for <a href="#">@promax</a>
+about an hour ago via twitter
+
+Sneak peek our new office. <a href="#">but.ly/zH3UnD</a> Drop in on us.
+about an hour ago via twitter
+
+Read More 941b1e, extra 10px top
+
+        -->
                 </nav>
             </div>
         </header>
         <section class="bg-white overflow-hidden">
-            <img src="img/main-1.jpg" alt="" />
+            <div id="intro">
+                <div class="intro-1">
+                    <div class="site-width">
+                        <div class="intro-copy">
+                            <div class="intro-title">The iPhone<br />
+                                Unchained.</div>
+                            <p>Tarantino&rsquo;s outrageous film Djano Unchained needed an equally in your face mobile experience. Bloody good awesomeness ensued. <a href="#">View Project</a></p>
+                        </div>
+                    </div>
+                    <img src="img/main-1.jpg" alt="" />
+                </div>
+                <div class="intro-2">
+                    <div class="site-width">
+                        <div class="intro-copy">
+                            <div class="intro-title">SAY HELLO TO THE future of vizio.</div>
+                            <p>When Vizio needed to pull the wrap off its new family of PCs they called on Envoy to conceptualize, direct and produce a series of short product films. <a href="#">View Project</a></p>
+                        </div>
+                    </div>
+                    <img src="img/main-2.jpg" alt="" />
+                </div>
+                <div class="intro-3">
+                    <div class="site-width">
+                        <div class="intro-copy">
+                            <div class="intro-title">HELPING Earth&rsquo;s Greatest Secrets break out.</div>
+                            <p>Activate rocket boots! We created a series of out of this world mobile apps and games to introduce the hilarious animated film Escape From Planet Earth. <a href="#">View Project</a></p>
+                        </div>
+                    </div>
+                    <img src="img/main-3.jpg" alt="" />
+                </div>
+                <div class="intro-4">
+                    <div class="site-width">
+                        <div class="intro-copy">
+                            <div class="intro-title">WORLD MEET ULTRA.<br />
+                                ULTRA MEET WORLD.</div>
+                            <p>Asked to launch T-Mobile&rsquo;s new internationally-minded brand, Ultra Mobile, we created a campaign that&rsquo;s creativity knows no borders. <a href="#">View Project</a></p>
+                        </div>
+                    </div>
+                    <img src="img/main-4.jpg" alt="" />
+                </div>
+            </div>
         </section>
-
         <section>
             <div class="site-width padding-top padding-bottom">
                 <h1>An independent full service creative agency helping brave brands build businesses and be heard in a world full of noise. <span class="text-active">We are Envoy.</span></h1>
@@ -79,101 +162,9 @@
                 </div>
             </div>
         </section>
-
-        <!-- notes to self
-        not sprite or retina anything, everything is usually saved 1x for this demo to save time, and main carousel images stay desktop layout
-
-        also, just going with modern browsers, no old fallback (ie. no filter for opacity etc.)
-
-
-content width: 940px
-
-full 16 column (40px each) + gutters/padding: 10px (in addition to 940 = 960 tots, and between columns is 2 [20px])
-or
-3 column (300px each)
-
-header is black 80% 60px high, text sits 15px from bottom
-logo: 87x25
-links are arial, 13px, bold, -25, white off, 9f9f9f hover, e34e33 active
-Work       Services       Ventures       About       Contact       Blog
-
-twitter:
-
-bar: 161px x 40px 464646
-bird: 20px left? 21x17 Tweet. Tweet. Arial 13px bold 67d9da
-
-button: bg e34e33 (hover 941b1e) 40x40 with 14x14 +
-open: bg 941b1e 14x4 - 
-
-expand, bar gets 430px wide
-content bg e34e33, padding 30px 20px, but scroller 15px from right, 10px wide, drag 941b1e, area d3442f
-text arial 36/33 white, links 941b1e, date arial 16/33 e4e4e4, 25px between
-
-static content for now, rather that api to pull live + library to catch urls/@/# to link
-
-Can’t wait for the launch of the Envoy Website. <a href="#">instagr.am/p/N8d7E/</a> Check our latest work.
-about an hour ago via twitter
-
-ooVoo tabs Envoy as new digital agency.
-about an hour ago via twitter
-
-Check out our latest work for <a href="#">@promax</a>
-about an hour ago via twitter
-
-Sneak peek our new office. <a href="#">but.ly/zH3UnD</a> Drop in on us.
-about an hour ago via twitter
-
-Read More 941b1e, extra 10px top
-
-
-
-
-main image, goes behind header (sticky header?), background white
-
-hero images need slider:
-
-main title:
-carousel dots: off ffffff, hover 9f9f9f, active e34e33, 11x11, 29px from bottom, 10px between
-same colors for arrows/chevrons, aligned right to grid (inside padding), 20px from bottom, 17x29px, ~43px between
-
-frame1:
-1 col, but 200px from top
-TradeGothic BoldCondTwenty, 62px/58px, -25, d90e0a 
-The iPhone
-Unchained.
-
-arial, 16px/20px, 9f9f9f, link d80e0a, 20px above, text breaks like 380?
-Tarantino&rsquo;s outrageous film Djano Unchained needed an equally in your face mobile experience. Bloody good awesomeness ensued. 
-<a href="#">View Project</a>
-
-frame2:
-from 1 col (not including padding) 480px left, 140px from top
-SAY HELLO TO THE
-future of vizio.
-text breaks 400px
-When Vizio needed to pull the wrap off its new family of PCs they called on Envoy to conceptualize, direct and produce a series of short product films.
-<a href="#">View Project</a>
-
-frame 3:
-1 col, and 140px from top
-colors are f68f1e and white text
-HELPING Earth&rsquo;s Greatest Secrets break out.
-text breaks 400px
-Activate rocket boots! We created a series of out of this world mobile apps and games to introduce the hilarious animated film Escape From Planet Earth.
-<a href="#">View Project</a>
-
-frame 4:
-color highlight is 2162bc
-WORLD MEET ULTRA.
-ULTRA MEET WORLD.
-text breaks 400px
-Asked to launch T-Mobile&rsquo;s new internationally-minded brand, Ultra Mobile, we created a campaign that&rsquo;s creativity knows no borders.
-<a href="#">View Project</a>
-
-
-
-
-
-        -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+        <!-- need to bundle -->
+        <script src="js/owlcarousel/owl.carousel.min.js"></script>
+        <script src="js/script.js"></script>
     </body>
 </html>
