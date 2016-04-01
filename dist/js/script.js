@@ -8,4 +8,7 @@ $(document).ready(function(){
 	    nav: true,
 	    navText: ["<span class='chevron chevron-left'></span>","<span class='chevron chevron-right'></span>"]
 	});
+	$(".mobile-nav-trigger").on("click", function() {
+		$(this).toggleClass("nav-open");
+	});
 });

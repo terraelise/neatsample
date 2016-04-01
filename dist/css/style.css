@@ -27,18 +27,102 @@ header {
   background-color: rgba(0, 0, 0, 0.8); }
   header .header-logo {
     display: block;
+    position: absolute;
+    bottom: 15px;
     height: 25px;
     width: 87px;
-    margin-top: 20px;
     background-image: url("../img/header-envoy.png");
     background-repeat: no-repeat;
     background-position: 0 0;
     background-size: contain; }
+  header .site-width {
+    height: 60px; }
   header nav {
     display: block;
-    position: relative; }
+    position: absolute;
+    bottom: 11px;
+    left: 120px; }
     header nav ul {
-      list-style-type: none; }
+      display: block;
+      list-style-type: none;
+      padding: 0;
+      margin: 0; }
+      header nav ul li {
+        display: inline-block;
+        padding: 0;
+        margin: 0; }
+        header nav ul li a {
+          display: inline-block;
+          padding: 0 10px;
+          font-weight: bold;
+          color: #FFFFFF; }
+          header nav ul li a:hover, header nav ul li a:focus {
+            color: #9f9f9f;
+            text-decoration: none; }
+          header nav ul li a.active {
+            color: #e34e33; }
+    header nav .mobile-nav-trigger {
+      display: none; }
+    @media screen and (max-width: 969px) {
+      header nav {
+        top: 0;
+        left: 100px;
+        bottom: auto; }
+        header nav ul {
+          overflow: hidden;
+          position: relative;
+          left: -100px;
+          max-height: 0;
+          -webkit-transition: max-height 300ms ease-in-out;
+          -moz-transition: max-height 300ms ease-in-out;
+          transition: max-height 300ms ease-in-out; }
+          header nav ul li {
+            display: block;
+            overflow: hidden; }
+            header nav ul li a {
+              display: block;
+              width: 150px;
+              padding: 10px;
+              background-color: rgba(0, 0, 0, 0.8);
+              border-top: 1px solid rgba(255, 255, 255, 0.5); }
+              header nav ul li a:hover, header nav ul li a:focus {
+                background-color: rgba(0, 0, 0, 0.9); }
+        header nav .mobile-nav-trigger {
+          display: block;
+          overflow: hidden;
+          height: 60px;
+          padding: 22px 12px;
+          cursor: pointer; }
+          header nav .mobile-nav-trigger div {
+            height: 3px;
+            width: 36px;
+            background-color: #9f9f9f;
+            -webkit-transition: all 300ms ease-in-out;
+            -moz-transition: all 300ms ease-in-out;
+            transition: all 300ms ease-in-out; }
+            header nav .mobile-nav-trigger div ~ div {
+              margin-top: 6px; }
+          header nav .mobile-nav-trigger.nav-open div {
+            margin-top: 10px;
+            -webkit-transform: rotate(45deg);
+            -moz-transform: rotate(45deg);
+            -ms-transform: rotate(45deg);
+            -o-transform: rotate(45deg);
+            transform: rotate(45deg);
+            background-color: #FFFFFF; }
+            header nav .mobile-nav-trigger.nav-open div + div {
+              margin-top: -3px;
+              -webkit-transform: rotate(-45deg);
+              -moz-transform: rotate(-45deg);
+              -ms-transform: rotate(-45deg);
+              -o-transform: rotate(-45deg);
+              transform: rotate(-45deg); }
+              header nav .mobile-nav-trigger.nav-open div + div + div {
+                opacity: 0; }
+          header nav .mobile-nav-trigger.nav-open + ul {
+            max-height: 300px; }
+          header nav .mobile-nav-trigger:hover div, header nav .mobile-nav-trigger:focus div {
+            background-color: #e34e33; } }
 
 section {
   display: block; }
@@ -123,9 +207,9 @@ p {
 a {
   color: #f05134;
   text-decoration: none;
-  -webkit-transition: color 300ms ease-in-out;
-  -moz-transition: color 300ms ease-in-out;
-  transition: color 300ms ease-in-out; }
+  -webkit-transition: all 300ms ease-in-out;
+  -moz-transition: all 300ms ease-in-out;
+  transition: all 300ms ease-in-out; }
   a:hover, a:focus {
     color: #e34e33;
     text-decoration: underline; }
