@@ -86,7 +86,7 @@ header {
 			display: none;
 		}
 		//including twitter box, this is when nav condensed to dropdown
-	    @include media(max-width 719px) {
+	    @include media(max-width 739px) {
 	   		top: 0;
 	   		left: 100px;
 	   		bottom: auto;

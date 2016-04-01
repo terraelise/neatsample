@@ -66,7 +66,7 @@ header {
             color: #e34e33; }
     header nav .mobile-nav-trigger {
       display: none; }
-    @media screen and (max-width: 719px) {
+    @media screen and (max-width: 739px) {
       header nav {
         top: 0;
         left: 100px;
