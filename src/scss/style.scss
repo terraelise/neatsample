@@ -20,12 +20,16 @@ $large-spacing: 35px;
 $color-default: #FFFFFF;
 $color-hover: #9f9f9f;
 $color-active: #e34e33;
+$color-active-dark: #941b1e;
 $color-link: #f05134;
 $color-faded: #282828;
 $color-highlight: #67d9da;
 
 //structure
 $header-h: 60px;
+$twitter-h: 40px;
+$twitter-feed-w: 430px;
+$twitter-feed-h: 580px;
 body {
 	padding: 0;
 	margin: 0;
@@ -49,7 +53,7 @@ header {
 		background-size: contain;
 	}
 	.site-width {
-		height: 60px;
+		height: $header-h;
 	}
 	nav {
 		display: block;
@@ -81,8 +85,8 @@ header {
 		.mobile-nav-trigger {
 			display: none;
 		}
-		//including expanded twitter box, this is when nav condensed to dropdown
-	    @include media(max-width 969px) {
+		//including twitter box, this is when nav condensed to dropdown
+	    @include media(max-width 719px) {
 	   		top: 0;
 	   		left: 100px;
 	   		bottom: auto;
@@ -145,6 +149,144 @@ header {
 	   			}
 	   		}
 	    }
+	}
+	.twitter-button-mobile {
+		display: none;
+	}
+	.twitter {
+		@include position(absolute, null 0 0 null);
+		@include size(201px $twitter-h); //161 box area + 40 button area
+		background-color: #464646;
+		@include transition(width 300ms ease-in-out);
+		.twitter-box {
+			overflow: hidden;
+			@include position(absolute, 0 null null 0);
+			@include size(390px $twitter-h);
+			.twitter-switch {
+				display: block;
+				@include position(absolute, 0 null null 0);
+				padding: 0 20px;
+				font-weight: bold;
+				color: $color-highlight;
+				line-height: $twitter-h;
+				cursor: pointer;
+				span {
+					display: inline-block;
+					@include size(21px 17px);
+					background-image: url("../img/header-twitter-icon.png");
+					background-repeat: no-repeat;
+					background-position: 0 0;
+					background-size: contain;
+					vertical-align: middle;
+				}
+				&:hover, &:focus {
+					text-decoration: none;
+				}
+			}
+			.twitter-button {
+				display: block;
+				@include position(absolute, 0 0 null null);
+				padding: 10px 20px;
+				img {
+					display: block;
+					border: 0;
+				}
+			}
+		}
+		> .twitter-switch {
+			display: block;
+			@include position(absolute, 0 0 null null);
+			@include size($twitter-h);
+			background-color: $color-active;
+			cursor: pointer;
+			&:hover, &:focus {
+				background-color: $color-active-dark;
+			}
+			div {
+				@include position(absolute, 18px null null 13px);
+				@include size(14px 4px);
+				background-color: $color-default;
+				+ div {
+					@include transform(rotate(90deg));
+				}
+			}
+		}
+		.twitter-feed {
+			overflow: hidden;
+			@include position(absolute, $twitter-h 0 null null);
+			@include size($twitter-feed-w $twitter-feed-h);
+			max-height: 0;
+			@include transition(max-height 300ms ease-in-out);
+			background-color: $color-active;
+			.twitter-scroll {
+				@include position(absolute, 30px 15px 30px 20px)
+				@include size(($twitter-feed-w - 35px) ($twitter-feed-h - 60px));
+				.twitter-scroll-content {
+					padding-right: 5px;
+					font-weight: bold;
+					div {
+						padding-bottom: 25px;
+						color: #e4e4e4;
+						span {
+							display: block;
+							padding-bottom: 5px;
+							font-size: 277%;
+							color: $color-default;
+							letter-spacing: -0.025em;
+							line-height: 33px;
+						}
+						&:last-of-type {
+							padding-bottom: 35px;
+						}
+					}
+					a {
+						color: $color-active-dark;
+					}
+				}
+				//iscroll stuff
+				.iScrollVerticalScrollbar {
+					width: 10px !important;
+					background-color: #d3442f;
+					border-radius: 5px !important;
+					.iScrollIndicator {
+						width: 10px !important;
+						background-color: #941b1e !important;
+						border: 0 !important;
+						border-radius: 5px !important;
+					}
+				}
+			}
+		}
+		&.twitter-open {
+			width: $twitter-feed-w;
+			> .twitter-switch {
+				background-color: $color-active-dark;
+				div + div {
+					display: none;
+				}
+			}
+			.twitter-feed {
+				max-height: $twitter-feed-h;
+				@include media(max-height ($twitter-feed-h + $header-h - 1)) {
+					max-height: 200px;
+					.twitter-scroll {
+						height: 140px;
+					}
+				}
+			}
+		}
+	}
+	/*
+	twitter scroller is actually 15px from right, 10px wide, drag 941b1e, area d3442f
+	*/
+	@include media(max-width 449px) {
+		.twitter-button-mobile {
+			display: block;
+			@include position(absolute, 25px $default-spacing null null);
+		}
+		.twitter {
+			display: none;
+		}
 	}
 }
 section {

@@ -7,7 +7,7 @@
         <meta name="description" content="Neat Sample" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-        <!-- need to bundle -->
+        <!-- need to bundle and minify -->
         <link rel="stylesheet" href="js/owlcarousel/owl.carousel.min.css" />
         <link rel="stylesheet" href="js/owlcarousel/owl.theme.default.min.css" />
         <link rel="stylesheet" href="css/style.min.css" />
@@ -16,7 +16,14 @@
         <!--[if lt IE 9]>
             <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Be happy and update your browser.</p>
         <![endif]-->
+<!-- notes
+not sprite or retina anything, everything is usually saved 1x for this demo to save time, and main carousel images stay desktop layout
 
+also, just going with modern browsers, no old fallback (ie. no filter for opacity etc.)
+
+didn't use icons, just images and such, to save time, and the tiny ones could be embedded, but aren't
+
+-->
         <header>
             <div class="site-width">
                 <a href="#" class="header-logo" title="ENVOY"></a>
@@ -35,41 +42,43 @@
                         <li><a href="#">Blog</a></li>
                     </ul>
                 </nav>
-<!-- notes to self
-not sprite or retina anything, everything is usually saved 1x for this demo to save time, and main carousel images stay desktop layout
-
-also, just going with modern browsers, no old fallback (ie. no filter for opacity etc.)
-
-
-twitter:
-
-bar: 161px x 40px 464646
-bird: 20px left? 21x17 Tweet. Tweet. Arial 13px bold 67d9da
-
-button: bg e34e33 (hover 941b1e) 40x40 with 14x14 +
-open: bg 941b1e 14x4 - 
-
-expand, bar gets 430px wide
-content bg e34e33, padding 30px 20px, but scroller 15px from right, 10px wide, drag 941b1e, area d3442f
-text arial 36/33 white, links 941b1e, date arial 16/33 e4e4e4, 25px between
-
-static content for now, rather that api to pull live + library to catch urls/@/# to link
-
-Can’t wait for the launch of the Envoy Website. <a href="#">instagr.am/p/N8d7E/</a> Check our latest work.
+                <a class="twitter-button-mobile" href="http://twitter.com/weareenvoy" target="_blank"><img src="img/header-twitter-btn.png" alt="Follow @weareenvoy" /></a>
+                <div class="twitter">
+                    <div class="twitter-box">
+                        <a class="twitter-switch">
+                            <span></span> Tweet. Tweet.
+                        </a>
+                        <a class="twitter-button" href="http://twitter.com/weareenvoy" target="_blank"><img src="img/header-twitter-btn.png" alt="Follow @weareenvoy" /></a>
+                    </div>
+                    <a class="twitter-switch">
+                        <div></div>
+                        <div></div>
+                    </a>
+                    <div class="twitter-feed">
+                        <div class="twitter-scroll">
+                            <div class="twitter-scroll-content">
+<!-- static content for now, rather that api to pull live + library to catch urls/@/# to link -->
+<div>
+<span>Can't wait for the launch of the Envoy Website. <a href="#">instagr.am/p/N8d7E/</a> Check our latest work.</span>
 about an hour ago via twitter
-
-ooVoo tabs Envoy as new digital agency.
+</div>
+<div>
+<span>ooVoo tabs Envoy as new digital agency.</span>
 about an hour ago via twitter
-
-Check out our latest work for <a href="#">@promax</a>
+</div>
+<div>
+<span>Check out our latest work for <a href="#">@promax</a></span>
 about an hour ago via twitter
-
-Sneak peek our new office. <a href="#">but.ly/zH3UnD</a> Drop in on us.
+</div>
+<div>
+<span>Sneak peek our new office. <a href="#">but.ly/zH3UnD</a> Drop in on us.</span>
 about an hour ago via twitter
-
-Read More 941b1e, extra 10px top
-
-        -->
+</div>
+<a href="http://twitter.com/weareenvoy" target="_blank">Read More</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </header>
         <section class="bg-white overflow-hidden">
@@ -170,8 +179,9 @@ Read More 941b1e, extra 10px top
             </div>
         </section>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
-        <!-- need to bundle -->
+        <!-- need to bundle and minify -->
         <script src="js/owlcarousel/owl.carousel.min.js"></script>
+        <script src="js/iscroll.js"></script>
         <script src="js/script.js"></script>
     </body>
 </html>

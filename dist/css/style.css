@@ -24,7 +24,10 @@ header {
   left: 0;
   z-index: 100;
   height: 60px;
-  background-color: rgba(0, 0, 0, 0.8); }
+  background-color: rgba(0, 0, 0, 0.8);
+  /*
+	twitter scroller is actually 15px from right, 10px wide, drag 941b1e, area d3442f
+	*/ }
   header .header-logo {
     display: block;
     position: absolute;
@@ -63,7 +66,7 @@ header {
             color: #e34e33; }
     header nav .mobile-nav-trigger {
       display: none; }
-    @media screen and (max-width: 969px) {
+    @media screen and (max-width: 719px) {
       header nav {
         top: 0;
         left: 100px;
@@ -123,6 +126,146 @@ header {
             max-height: 300px; }
           header nav .mobile-nav-trigger:hover div, header nav .mobile-nav-trigger:focus div {
             background-color: #e34e33; } }
+  header .twitter-button-mobile {
+    display: none; }
+  header .twitter {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    height: 40px;
+    width: 201px;
+    background-color: #464646;
+    -webkit-transition: width 300ms ease-in-out;
+    -moz-transition: width 300ms ease-in-out;
+    transition: width 300ms ease-in-out; }
+    header .twitter .twitter-box {
+      overflow: hidden;
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 40px;
+      width: 390px; }
+      header .twitter .twitter-box .twitter-switch {
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        padding: 0 20px;
+        font-weight: bold;
+        color: #67d9da;
+        line-height: 40px;
+        cursor: pointer; }
+        header .twitter .twitter-box .twitter-switch span {
+          display: inline-block;
+          height: 17px;
+          width: 21px;
+          background-image: url("../img/header-twitter-icon.png");
+          background-repeat: no-repeat;
+          background-position: 0 0;
+          background-size: contain;
+          vertical-align: middle; }
+        header .twitter .twitter-box .twitter-switch:hover, header .twitter .twitter-box .twitter-switch:focus {
+          text-decoration: none; }
+      header .twitter .twitter-box .twitter-button {
+        display: block;
+        position: absolute;
+        top: 0;
+        right: 0;
+        padding: 10px 20px; }
+        header .twitter .twitter-box .twitter-button img {
+          display: block;
+          border: 0; }
+    header .twitter > .twitter-switch {
+      display: block;
+      position: absolute;
+      top: 0;
+      right: 0;
+      height: 40px;
+      width: 40px;
+      background-color: #e34e33;
+      cursor: pointer; }
+      header .twitter > .twitter-switch:hover, header .twitter > .twitter-switch:focus {
+        background-color: #941b1e; }
+      header .twitter > .twitter-switch div {
+        position: absolute;
+        top: 18px;
+        left: 13px;
+        height: 4px;
+        width: 14px;
+        background-color: #FFFFFF; }
+        header .twitter > .twitter-switch div + div {
+          -webkit-transform: rotate(90deg);
+          -moz-transform: rotate(90deg);
+          -ms-transform: rotate(90deg);
+          -o-transform: rotate(90deg);
+          transform: rotate(90deg); }
+    header .twitter .twitter-feed {
+      overflow: hidden;
+      position: absolute;
+      top: 40px;
+      right: 0;
+      height: 580px;
+      width: 430px;
+      max-height: 0;
+      -webkit-transition: max-height 300ms ease-in-out;
+      -moz-transition: max-height 300ms ease-in-out;
+      transition: max-height 300ms ease-in-out;
+      background-color: #e34e33; }
+      header .twitter .twitter-feed .twitter-scroll {
+        position: absolute;
+        top: 30px;
+        right: 15px;
+        bottom: 30px;
+        left: 20px;
+        height: 520px;
+        width: 395px; }
+        header .twitter .twitter-feed .twitter-scroll .twitter-scroll-content {
+          padding-right: 5px;
+          font-weight: bold; }
+          header .twitter .twitter-feed .twitter-scroll .twitter-scroll-content div {
+            padding-bottom: 25px;
+            color: #e4e4e4; }
+            header .twitter .twitter-feed .twitter-scroll .twitter-scroll-content div span {
+              display: block;
+              padding-bottom: 5px;
+              font-size: 277%;
+              color: #FFFFFF;
+              letter-spacing: -0.025em;
+              line-height: 33px; }
+            header .twitter .twitter-feed .twitter-scroll .twitter-scroll-content div:last-of-type {
+              padding-bottom: 35px; }
+          header .twitter .twitter-feed .twitter-scroll .twitter-scroll-content a {
+            color: #941b1e; }
+        header .twitter .twitter-feed .twitter-scroll .iScrollVerticalScrollbar {
+          width: 10px !important;
+          background-color: #d3442f;
+          border-radius: 5px !important; }
+          header .twitter .twitter-feed .twitter-scroll .iScrollVerticalScrollbar .iScrollIndicator {
+            width: 10px !important;
+            background-color: #941b1e !important;
+            border: 0 !important;
+            border-radius: 5px !important; }
+    header .twitter.twitter-open {
+      width: 430px; }
+      header .twitter.twitter-open > .twitter-switch {
+        background-color: #941b1e; }
+        header .twitter.twitter-open > .twitter-switch div + div {
+          display: none; }
+      header .twitter.twitter-open .twitter-feed {
+        max-height: 580px; }
+        @media screen and (max-height: 639px) {
+          header .twitter.twitter-open .twitter-feed {
+            max-height: 200px; }
+            header .twitter.twitter-open .twitter-feed .twitter-scroll {
+              height: 140px; } }
+  @media screen and (max-width: 449px) {
+    header .twitter-button-mobile {
+      display: block;
+      position: absolute;
+      top: 25px;
+      right: 10px; }
+    header .twitter {
+      display: none; } }
 
 section {
   display: block; }
