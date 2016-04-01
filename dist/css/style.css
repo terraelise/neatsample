@@ -19,21 +19,26 @@ body {
 
 header {
   position: fixed;
-  z-index: 100;
   top: 0;
-  left: 0;
   right: 0;
+  left: 0;
+  z-index: 100;
   height: 60px;
   background-color: rgba(0, 0, 0, 0.8); }
   header .header-logo {
     display: block;
-    width: 87px;
     height: 25px;
+    width: 87px;
     margin-top: 20px;
     background-image: url("../img/header-envoy.png");
     background-repeat: no-repeat;
     background-position: 0 0;
     background-size: contain; }
+  header nav {
+    display: block;
+    position: relative; }
+    header nav ul {
+      list-style-type: none; }
 
 section {
   display: block; }
@@ -159,38 +164,54 @@ hr {
     margin: 35px 0; }
 
 .chevron::before {
-  border-color: #EEEEEE;
-  border-style: solid;
-  border-width: 0.09em 0.09em 0 0;
   content: '';
   display: inline-block;
-  height: 0.45em;
-  left: 0.15em;
   position: relative;
   top: 0.15em;
+  left: 0.15em;
+  height: 0.45em;
+  width: 0.45em;
+  -webkit-transform: rotate(-45deg);
+  -moz-transform: rotate(-45deg);
+  -ms-transform: rotate(-45deg);
+  -o-transform: rotate(-45deg);
   transform: rotate(-45deg);
   vertical-align: top;
-  width: 0.45em; }
+  border-color: #EEEEEE;
+  border-style: solid;
+  border-width: 0.09em 0.09em 0 0; }
 
 .chevron-right:before {
   left: 0;
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
   transform: rotate(45deg); }
 
 .chevron-bottom:before {
   top: 0;
+  -webkit-transform: rotate(135deg);
+  -moz-transform: rotate(135deg);
+  -ms-transform: rotate(135deg);
+  -o-transform: rotate(135deg);
   transform: rotate(135deg); }
 
 .chevron-left:before {
   left: 0.25em;
+  -webkit-transform: rotate(-135deg);
+  -moz-transform: rotate(-135deg);
+  -ms-transform: rotate(-135deg);
+  -o-transform: rotate(-135deg);
   transform: rotate(-135deg); }
 
 .owl-carousel {
   min-width: 320px; }
   .owl-carousel .owl-controls {
     position: absolute;
+    right: 0;
     bottom: 15px;
     left: 0;
-    right: 0;
     max-width: 960px;
     margin: auto; }
     @media screen and (max-width: 599px) {
@@ -199,8 +220,8 @@ hr {
         padding: 15px 0;
         background-color: #666666; } }
     .owl-carousel .owl-controls .owl-dots .owl-dot span {
-      width: 11px;
       height: 11px;
+      width: 11px;
       margin: 10px 5px;
       background: #EEEEEE; }
     .owl-carousel .owl-controls .owl-dots .owl-dot:hover span, .owl-carousel .owl-controls .owl-dots .owl-dot:focus span {
@@ -220,18 +241,14 @@ hr {
       .owl-carousel .owl-controls .owl-nav [class*=owl-] {
         overflow: hidden;
         height: 50px;
-        margin: 0;
         padding: 0 15px 0 10px;
+        margin: 0;
         background: transparent;
         font-size: 50px;
         border-top-left-radius: 0;
         border-top-right-radius: 0;
-        border-bottom-right-radius: 0;
-        border-top-right-radius: 0;
         border-bottom-left-radius: 0;
-        border-bottom-right-radius: 0;
-        border-bottom-left-radius: 0;
-        border-top-left-radius: 0; }
+        border-bottom-right-radius: 0; }
         .owl-carousel .owl-controls .owl-nav [class*=owl-]:hover {
           background: transparent; }
           .owl-carousel .owl-controls .owl-nav [class*=owl-]:hover .chevron::before {
@@ -249,17 +266,17 @@ hr {
           z-index: 2;
           width: 45%; } }
       .owl-carousel .owl-item .intro-copy .intro-title {
+        margin-top: 90px;
         font-family: 'TradeGothic-BoldCondTwenty',Impact,Haettenschweiler,"Franklin Gothic Bold",Charcoal,"Helvetica Inserat","Bitstream Vera Sans Bold","Arial Black","sans serif";
         font-size: 354%;
         line-height: 0.94;
         letter-spacing: -0.025em;
         color: #d90e0a;
-        text-transform: uppercase;
-        margin-top: 90px; }
+        text-transform: uppercase; }
         @media screen and (min-width: 600px) {
           .owl-carousel .owl-item .intro-copy .intro-title {
-            font-size: 477%;
-            margin-top: 140px; } }
+            margin-top: 140px;
+            font-size: 477%; } }
       .owl-carousel .owl-item .intro-copy p {
         max-width: 400px;
         margin: 20px 0;
@@ -270,12 +287,12 @@ hr {
         color: #d90e0a; }
     .owl-carousel .owl-item img {
       position: absolute;
-      z-index: 1;
-      left: -9999px;
       right: -9999px;
+      left: -9999px;
+      z-index: 1;
+      height: 337px;
       width: auto;
-      margin: auto;
-      height: 337px; }
+      margin: auto; }
       @media screen and (min-width: 600px) {
         .owl-carousel .owl-item img {
           height: 674px; } }

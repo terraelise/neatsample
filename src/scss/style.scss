@@ -34,27 +34,37 @@ body {
 	line-height: $default-line-height;
 }
 header {
-	position: fixed;
+	@include position(fixed, 0 0 null 0);
 	z-index: 100;
-	top: 0;
-	left: 0;
-	right: 0;
 	height: 60px;
 	background-color: rgba(0, 0, 0, 0.8);
 	.header-logo {
 		display: block;
-		width: 87px;
-		height: 25px;
+		@include size(87px 25px);
 		margin-top: 20px; //puts on 15px bottom line - (header height - 15 - this height)
 		background-image: url("../img/header-envoy.png");
 		background-repeat: no-repeat;
 		background-position: 0 0;
 		background-size: contain;
 	}
+	nav {
+		display: block;
+		position: relative;
+		ul {
+			list-style-type: none;
+			li {
+				a {
+
+				}
+			}
+		}
+	}
+	//text sits 15px from bottom
+	//links are arial, 13px, bold, -25, white off, 9f9f9f hover, e34e33 active
 }
 section {
 	@include row();
-	//not sure why, but it's not doing the before or the clear on after )-: maybe old stuff on my end? and why one semi-colon?
+	//not sure why, but it's not doing the before or the clear on after )-: maybe old stuff on my end? and why one semi-colon? seems dated
   	&:before {
 	    clear: both;
 	    content: "";
@@ -72,6 +82,7 @@ section {
 	padding: 0 $default-spacing;
 	margin: 0 auto;
 }
+//so... I tried to use neat, and just hate their grid. ems & margins for spacing are fine enough for data feeds, but design-specific columns? prefer the easier to maintain 'bootstrap' way of padding - less math imo
 .col-wrap {
 	@include row();
 	//not sure why, but it's not doing the before or the clear on after )-: maybe old stuff on my end? and why one semi-colon?
@@ -181,44 +192,39 @@ hr {
 
 //css chevrons for now, 'cause http://codepen.io/jonneal/pen/kptBs
 .chevron::before {
+	content: '';
+	display: inline-block;
+	@include position(relative, 0.15em null null 0.15em);
+	@include size(0.45em);
+	@include transform(rotate(-45deg));
+	vertical-align: top;
 	border-color: #EEEEEE;
 	border-style: solid;
 	border-width: 0.09em 0.09em 0 0;
-	content: '';
-	display: inline-block;
-	height: 0.45em;
-	left: 0.15em;
-	position: relative;
-	top: 0.15em;
-	transform: rotate(-45deg);
-	vertical-align: top;
-	width: 0.45em;
 }
 .chevron-right:before {
 	left: 0;
-	transform: rotate(45deg);
+	@include transform(rotate(45deg));
 }
 .chevron-bottom:before {
 	top: 0;
-	transform: rotate(135deg);
+	@include transform(rotate(135deg));
 }
 .chevron-left:before {
 	left: 0.25em;
-	transform: rotate(-135deg);
+	@include transform(rotate(-135deg));
 }
 
 //owl specific
+$owl-thin-width: 600px;
 $owl-img-h: 674px;
 .owl-carousel {
 	min-width: $website-width-min;
 	.owl-controls {
-		position: absolute;
-		bottom: 15px;
-		left: 0;
-		right: 0;
+		@include position(absolute, null 0 15px 0);
 		max-width: $website-width;
 		margin: auto;
-	    @include media(max-width 599px) {
+	    @include media(max-width ($owl-thin-width - 1)) {
 	    	bottom: 0;
 	    	padding: 15px 0;
 	    	background-color: #666666;
@@ -226,8 +232,7 @@ $owl-img-h: 674px;
 		.owl-dots {
 			.owl-dot {
 				span {
-					width: 11px;
-					height: 11px;
+					@include size(11px);
 					margin: $default-spacing ($default-spacing/2);
 					background: #EEEEEE;
 				}
@@ -244,27 +249,21 @@ $owl-img-h: 674px;
 			}
 		}
 		.owl-nav {
-			position: absolute;
-			top: -5px;
-			right: 0;
-		    @include media(max-width 599px) {
-		    	position: relative;
-		    	top: 0;
-		    	right: auto;
+			@include position(absolute, -5px 0 null null);
+		    @include media(max-width ($owl-thin-width - 1)) {
+		    	@include position(relative, 0 auto null null);
 		    	margin-left: -5px;
 		    }
 			[class*=owl-] {
 				overflow: hidden;
 				height: 50px;
-				margin: 0;
 				padding: 0 15px 0 10px;
+				margin: 0;
 				background: transparent;
 				font-size: 50px;
-				//why isn't there just one? that's dumb
+				//why isn't there just one? that's dumb, i need to override using all prefixes but can't in one?
 				@include border-top-radius(0);
-				@include border-right-radius(0);
 				@include border-bottom-radius(0);
-				@include border-left-radius(0);
 				&:hover {
 					background: transparent;
 					.chevron::before {
@@ -279,24 +278,22 @@ $owl-img-h: 674px;
 	    height: $owl-img-h;
 		.intro-copy {
 			overflow: hidden;
-		    @include media(min-width 600px) {
-		    	position: absolute;
-		    	top: 0;
-				left: $default-spacing;
+		    @include media(min-width $owl-thin-width) {
+		    	@include position(absolute, 0 null null $default-spacing);
 		    	z-index: 2;
 				width: 45%;
 		    }
 			.intro-title {
+				margin-top: 90px;
 				font-family: 'TradeGothic-BoldCondTwenty',Impact,Haettenschweiler,"Franklin Gothic Bold",Charcoal,"Helvetica Inserat","Bitstream Vera Sans Bold","Arial Black","sans serif";
 				font-size: 354%;
 				line-height: 0.94;
 				letter-spacing: -0.025em;
 				color: #d90e0a;
 				text-transform: uppercase;
-				margin-top: 90px;
-			    @include media(min-width 600px) {
-					font-size: 477%;
+			    @include media(min-width $owl-thin-width) {
 			    	margin-top: 140px;
+					font-size: 477%;
 			    }
 			}
 			p {
@@ -311,14 +308,11 @@ $owl-img-h: 674px;
 			}
 		}
 		img {
-	    	position: absolute;
+			@include position(absolute, null -9999px null -9999px);
 			z-index: 1;
-	    	left: -9999px;
-	    	right: -9999px;
-	    	width: auto;
+			@include size(auto ($owl-img-h/2));
 		    margin: auto;
-		    height: $owl-img-h/2;
-		    @include media(min-width 600px) {
+		    @include media(min-width $owl-thin-width) {
 		    	height: $owl-img-h;
 		    }
 		}
@@ -351,7 +345,7 @@ $owl-img-h: 674px;
 				}
 			}
 		}
-		@include media(min-width 600px max-width 700px) {
+		@include media(min-width $owl-thin-width max-width 700px) {
 			.intro-2 {
 				.intro-copy {
 					.intro-title {
@@ -360,7 +354,7 @@ $owl-img-h: 674px;
 				}
 			}
 		}
-		@include media(min-width 600px max-width 950px) {
+		@include media(min-width $owl-thin-width max-width 950px) {
 			.intro-3 {
 				.intro-copy {
 					width: 35%;
@@ -371,7 +365,7 @@ $owl-img-h: 674px;
 				}
 			}
 		}
-		@include media(min-width 600px) {
+		@include media(min-width $owl-thin-width) {
 			.intro-1 {
 				.intro-copy {
 					max-width: 370px;
@@ -388,18 +382,6 @@ $owl-img-h: 674px;
 					}
 				}
 			}
-			.intro-3 {
-				.intro-copy {
-					.intro-title {
-					}
-				}
-			}
-			.intro-4 {
-				.intro-copy {
-					.intro-title {
-					}
-				}
-			}
 		}
 		@include media(min-width 800px) {
 			.intro-1 {
@@ -412,18 +394,6 @@ $owl-img-h: 674px;
 				.intro-copy {
 					.intro-title {
 						margin-top: 140px;
-					}
-				}
-			}
-			.intro-3 {
-				.intro-copy {
-					.intro-title {
-					}
-				}
-			}
-			.intro-4 {
-				.intro-copy {
-					.intro-title {
 					}
 				}
 			}
