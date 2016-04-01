@@ -138,43 +138,49 @@ header {
     -webkit-transition: width 300ms ease-in-out;
     -moz-transition: width 300ms ease-in-out;
     transition: width 300ms ease-in-out; }
-    header .twitter .twitter-box {
+    header .twitter .twitter-box-wrap {
       overflow: hidden;
       position: absolute;
       top: 0;
+      right: 0;
       left: 0;
-      height: 40px;
-      width: 390px; }
-      header .twitter .twitter-box .twitter-switch {
-        display: block;
+      height: 40px; }
+      header .twitter .twitter-box-wrap .twitter-box {
         position: absolute;
         top: 0;
         left: 0;
-        padding: 0 20px;
-        font-weight: bold;
-        color: #67d9da;
-        line-height: 40px;
-        cursor: pointer; }
-        header .twitter .twitter-box .twitter-switch span {
-          display: inline-block;
-          height: 17px;
-          width: 21px;
-          background-image: url("../img/header-twitter-icon.png");
-          background-repeat: no-repeat;
-          background-position: 0 0;
-          background-size: contain;
-          vertical-align: middle; }
-        header .twitter .twitter-box .twitter-switch:hover, header .twitter .twitter-box .twitter-switch:focus {
-          text-decoration: none; }
-      header .twitter .twitter-box .twitter-button {
-        display: block;
-        position: absolute;
-        top: 0;
-        right: 0;
-        padding: 10px 20px; }
-        header .twitter .twitter-box .twitter-button img {
+        height: 40px;
+        width: 390px; }
+        header .twitter .twitter-box-wrap .twitter-box .twitter-switch {
           display: block;
-          border: 0; }
+          position: absolute;
+          top: 0;
+          left: 0;
+          padding: 0 20px;
+          font-weight: bold;
+          color: #67d9da;
+          line-height: 40px;
+          cursor: pointer; }
+          header .twitter .twitter-box-wrap .twitter-box .twitter-switch span {
+            display: inline-block;
+            height: 17px;
+            width: 21px;
+            background-image: url("../img/header-twitter-icon.png");
+            background-repeat: no-repeat;
+            background-position: 0 0;
+            background-size: contain;
+            vertical-align: middle; }
+          header .twitter .twitter-box-wrap .twitter-box .twitter-switch:hover, header .twitter .twitter-box-wrap .twitter-box .twitter-switch:focus {
+            text-decoration: none; }
+        header .twitter .twitter-box-wrap .twitter-box .twitter-button {
+          display: block;
+          position: absolute;
+          top: 0;
+          right: 0;
+          padding: 10px 20px; }
+          header .twitter .twitter-box-wrap .twitter-box .twitter-button img {
+            display: block;
+            border: 0; }
     header .twitter > .twitter-switch {
       display: block;
       position: absolute;

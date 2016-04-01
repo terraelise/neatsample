@@ -158,38 +158,42 @@ header {
 		@include size(201px $twitter-h); //161 box area + 40 button area
 		background-color: #464646;
 		@include transition(width 300ms ease-in-out);
-		.twitter-box {
+		.twitter-box-wrap {
 			overflow: hidden;
-			@include position(absolute, 0 null null 0);
-			@include size(390px $twitter-h);
-			.twitter-switch {
-				display: block;
+			@include position(absolute, 0 0 null 0);
+			height: $twitter-h;
+			.twitter-box {
 				@include position(absolute, 0 null null 0);
-				padding: 0 20px;
-				font-weight: bold;
-				color: $color-highlight;
-				line-height: $twitter-h;
-				cursor: pointer;
-				span {
-					display: inline-block;
-					@include size(21px 17px);
-					background-image: url("../img/header-twitter-icon.png");
-					background-repeat: no-repeat;
-					background-position: 0 0;
-					background-size: contain;
-					vertical-align: middle;
-				}
-				&:hover, &:focus {
-					text-decoration: none;
-				}
-			}
-			.twitter-button {
-				display: block;
-				@include position(absolute, 0 0 null null);
-				padding: 10px 20px;
-				img {
+				@include size(390px $twitter-h);
+				.twitter-switch {
 					display: block;
-					border: 0;
+					@include position(absolute, 0 null null 0);
+					padding: 0 20px;
+					font-weight: bold;
+					color: $color-highlight;
+					line-height: $twitter-h;
+					cursor: pointer;
+					span {
+						display: inline-block;
+						@include size(21px 17px);
+						background-image: url("../img/header-twitter-icon.png");
+						background-repeat: no-repeat;
+						background-position: 0 0;
+						background-size: contain;
+						vertical-align: middle;
+					}
+					&:hover, &:focus {
+						text-decoration: none;
+					}
+				}
+				.twitter-button {
+					display: block;
+					@include position(absolute, 0 0 null null);
+					padding: 10px 20px;
+					img {
+						display: block;
+						border: 0;
+					}
 				}
 			}
 		}
